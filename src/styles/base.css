@@ -30,8 +30,8 @@ button { cursor: pointer; }
 .detail__comments textarea { width: 100%; min-height: 90px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); resize: vertical; }
 .detail__comments form button { justify-self: start; }
 .nav__notification-btn { position: relative; padding: 0; border: 0; background: transparent; cursor: pointer; }
-.nav__notification-btn img { display: block; width: 22px; height: 22px; object-fit: contain; }
-.nav__notification-count { position: absolute; top: -6px; right: -7px; min-width: 16px; height: 16px; border-radius: 50%; background: var(--accent); color: var(--ink); font-size: 10px; display: grid; place-items: center; }
+.nav__notification-icon { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.nav__notification-dot { position: absolute; top: -2px; right: -2px; width: 10px; height: 10px; border-radius: 50%; background: #e5322d ; border: 2px solid #fff; }
 @media (max-width: 1023px) { .container { padding: 36px 32px 56px; } }
 @media (max-width: 639px) { .container { padding: 28px 16px 48px; } }
 @media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

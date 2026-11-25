@@ -111,8 +111,8 @@ export function Header() {
                 aria-expanded={notificationsOpen}
                 onClick={() => setNotificationsOpen((v) => !v)}
               >
-                <img width="20" height="20" src="https://img.icons8.com/ios/50/alarm--v2.png" alt="alarm--v2"/>
-                {unreadCount > 0 && <span className="nav__notification-count">{unreadCount}</span>}
+                <svg className="nav__notification-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 20a2 2 0 0 0 4 0" /></svg>
+                {unreadCount > 0 && <span className="nav__notification-dot">{unreadCount}</span>}
               </button> 
 
               {notificationsOpen && (
