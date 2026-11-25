@@ -40,6 +40,7 @@ export function LoginPage() {
 
   return (
     <AuthLayout>
+      <Link to="/" className="auth__back">← Voltar ao mural</Link>
       <h1 className="auth__heading">Bem-vinda(o) de volta!</h1>
       <p className="auth__sub">Entre para encontrar suas fotos ou acompanhar seus registros.</p>
       <span className="pill pill--accent">ACESSO À PLATAFORMA</span>
@@ -62,7 +63,7 @@ export function LoginPage() {
           <li><code>lucas@tracemark.dev</code> — fotógrafo (@lucas.lens)</li>
         </ul>
       </details>
-      <p className="auth__switch"><Link to="/">← Voltar ao mural</Link></p>
+      <p className="auth__switch"></p>
     </AuthLayout>
   );
 }

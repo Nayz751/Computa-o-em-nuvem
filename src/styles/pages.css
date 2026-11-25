@@ -18,6 +18,8 @@
 .auth__foot .accent { font-weight: 700; margin-right: 14px; }
 .auth__content { display: flex; align-items: center; justify-content: center; padding: 48px 32px; }
 .auth__form { width: 100%; max-width: 500px; }
+.auth__back { display: inline-block; margin-bottom: 20px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.auth__back:hover { color: var(--ink); text-decoration: underline; }
 .auth__heading { font-size: 36px; font-weight: 700; }
 .auth__sub { color: var(--muted); margin: 6px 0 20px; }
 .auth__switch { margin-top: 18px; text-align: center; font-size: 14px; color: var(--muted); }

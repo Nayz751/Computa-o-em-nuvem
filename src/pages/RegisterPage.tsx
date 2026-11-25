@@ -46,6 +46,7 @@ export function RegisterPage() {
 
   return (
     <AuthLayout>
+      <Link to="/">← Voltar ao mural</Link>
       <h1 className="auth__heading">Criar sua conta</h1>
       <p className="auth__sub">Faça parte do TraceMark e encontre os melhores momentos da sua corrida.</p>
       <form onSubmit={onSubmit} noValidate className="form">
@@ -67,7 +68,7 @@ export function RegisterPage() {
       </form>
       <hr className="divider" />
       <p className="auth__switch">Já tem uma conta? <Link to="/entrar" state={location.state}>Entrar</Link></p>
-      <p className="auth__switch"><Link to="/">← Voltar ao mural</Link></p>
+      <p className="auth__switch"></p>
     </AuthLayout>
   );
 }
