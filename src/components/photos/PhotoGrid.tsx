@@ -7,7 +7,7 @@ export function PhotoGrid({ photos, emptyTitle = 'Nenhuma fotografia encontrada'
   const { eventsById, usersById } = useApp();
   if (photos.length === 0) return <EmptyState title={emptyTitle} description={emptyText ?? 'Tente buscar por outro evento, cidade ou fotógrafo.'} />;
   return (
-    <div className="grid grid--photos">
+    <div className="feed">
       {photos.map((p) => <PhotoCard key={p.id} photo={p} event={eventsById.get(p.eventId)} photographer={usersById.get(p.photographerId)} />)}
     </div>
   );
