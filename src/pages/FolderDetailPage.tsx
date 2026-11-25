@@ -129,7 +129,7 @@ export function FolderDetailPage() {
           }
         />
       ) : (
-        <div className="grid grid--photos">
+        <div className="feed">
           {shownPhotos.map((photo) => (
             <article key={photo.id} className="photo-card">
               <Link

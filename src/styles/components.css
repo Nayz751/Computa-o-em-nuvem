@@ -220,3 +220,10 @@
 .photo-card__name { font-weight: 700; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .photo-card__handle { font-size: 11px; opacity: .85; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (max-width: 639px) { .photo-card__by { padding: 8px 8px 22px; gap: 6px; } .photo-card__avatar { width: 26px; height: 26px; font-size: 10px; } }
+
+/* Área do fotógrafo no mesmo formato de feed */
+.folder-post { text-decoration: none; color: inherit; }
+.folder-post:hover { box-shadow: 0 0 0 2px var(--ink); }
+.folder-post__count { position: absolute; top: 12px; left: 12px; z-index: 1; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+.feed .photo-card .pill--status { align-self: flex-start; margin-top: 6px; }
+.feed .photo-card .btn-row { margin-top: 10px; gap: 8px; }

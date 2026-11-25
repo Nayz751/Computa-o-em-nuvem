@@ -10,13 +10,12 @@ import { EmptyState } from '../components/common/Feedback';
 import { ButtonLink } from '../components/common/Button';
 import { PhotoPreview } from '../components/photos/PhotoPreview';
 import { formatDate, pluralize } from '../utils/format';
-import { StatusPill } from '../components/common/StatusPill';
-
+ 
 export function PublishedFoldersPage() {
   const { state, currentUser } = useApp();
   const [query, setQuery] = useState('');
   const me = currentUser!.id;
-
+ 
   const folders = useMemo(() => {
     const q = normalize(query);
     return state.events
@@ -27,7 +26,7 @@ export function PublishedFoldersPage() {
       .filter((f) => f.photos.length > 0 && (!q || normalize(`${f.event.name} ${f.event.city}`).includes(q)))
       .sort((a, b) => b.event.date.localeCompare(a.event.date));
   }, [state, me, query]);
-
+ 
   return (
     <PageLayout>
       <PageIntro line1="Minhas fotografias." eyebrow="ÁREA DO FOTÓGRAFO" description="Consulte suas fotografias publicadas, organizadas por evento."/>
@@ -36,14 +35,17 @@ export function PublishedFoldersPage() {
       {folders.length === 0 ? (
         <EmptyState title={query ? 'Nenhuma pasta encontrada' : 'Você ainda não publicou fotografias'} description={query ? 'Tente outro termo.' : 'Envie suas primeiras fotos para criar uma pasta de evento.'} action={!query && <ButtonLink to="/admin/enviar" variant="accent">＋ Enviar fotos</ButtonLink>} />
       ) : (
-        <div className="grid grid--info">
+        <div className="feed">
           {folders.map(({ event, photos }) => (
-            <Link key={event.id} to={`/admin/fotos/${event.id}`} className="folder-card">
-              <PhotoPreview photo={photos[0]} size="card" />
-              <span className="info-card__title">{event.name}</span>
-              <span className="info-card__meta">{event.city} • {formatDate(event.date)}</span>
-              <span className="info-card__count">{pluralize(photos.length, 'fotografia', 'fotografias')}</span>
-              {photos.map((photo) => (<StatusPill key={photo.id} status={photo.processingStatus ?? 'processing'} />))}
+            <Link key={event.id} to={`/admin/fotos/${event.id}`} className="photo-card folder-post">
+              <span className="photo-card__media">
+                <PhotoPreview photo={photos[0]} />
+                <span className="folder-post__count">{pluralize(photos.length, 'fotografia publicada', 'fotografias publicadas')}</span>
+              </span>
+              <span className="photo-card__body">
+                <span className="photo-card__title">{event.name}</span>
+                <span className="photo-card__meta">{event.city} • {formatDate(event.date)}</span>
+              </span>
             </Link>
           ))}
         </div>
