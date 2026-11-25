@@ -212,3 +212,11 @@
 .rows__name { font-weight: 500; text-decoration: none; }
 .rows__name small { color: var(--muted); font-weight: 400; }
 @media (max-width: 639px) { .rows__item { grid-template-columns: 1fr; } }
+
+/* Fotógrafo que postou, sobre o topo da foto*/
+.photo-card__by { position: absolute; top: 0; left: 0; right: 0; z-index: 1; display: flex; align-items: center; gap: 8px; padding: 12px 14px 28px; background: linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0)); color: #fff; }
+.photo-card__avatar { flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--ink); border: 2px solid #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+.photo-card__who { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.photo-card__name { font-weight: 700; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photo-card__handle { font-size: 11px; opacity: .85; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 639px) { .photo-card__by { padding: 8px 8px 22px; gap: 6px; } .photo-card__avatar { width: 26px; height: 26px; font-size: 10px; } }
